@@ -17,7 +17,7 @@ def Home():
 
 @app.route('/ApiCall')
 def apiCall():
-    return render_template('ApiCAll.html')
+    return render_template('ApiCall.html')
 
 
 @app.route('/objectModel')
