@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Web API|MA:Medical Assistant</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='/vendor/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/venobox/venobox.css') }}" rel="stylesheet">
+
+
+    <!-- Template Main CSS File -->
+    <link href="{{ url_for('static', filename='css/gre.css') }}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header-transparent">
+        <div class="container">
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="menu-active"><a href="/">Home</a></li>
+                    <li><a href="#about">Web API</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Intro Section ======= -->
+    <section id="intro">
+        <div class="intro-text">
+            <h2>MA:Medical Assistant</h2>
+            <p>Your health starts with you</br>
+            </p>
+            <a href="{{ url_for('apiCall') }}" class="btn-get-started scrollto">Give it a try...</a>
+        </div>
+    </section>
+    <!-- End Intro Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="section-bg">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h3 class="section-title">Web API</h3>
+                <span class="section-divider"></span>
+                <p class="section-description">
+                    Increase in technology has to result in increment of healthy solutions
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 about-img wow fadeInLeft">
+                    <img src="{{ url_for('static', filename='img/about-img.jpg')}}" alt="" style="margin-top:-10px">
+                </div>
+
+                <div class="col-lg-6 content wow fadeInRight">
+                    <h2>About our Web-API</h2>
+                    <h3>Based on simple REST principles.</h3>
+                    <p>
+                        Medical Assistant is basically a ML model API which will be accessible on any device cancelling out the issue of platform dependency, thereafter, user data will be processed thoroughly and results will be displayed, so they will be provided with highly
+                        accurate prediction as possible.
+                    </p>
+
+                    <ul>
+                        <li><i class="ion-android-checkmark-circle"></i> Accurate solution based on Machine Learning.</li>
+                        <li><i class="ion-android-checkmark-circle"></i> Easy to develop and deploy Web-API for collaborators.</li>
+                        <li><i class="ion-android-checkmark-circle"></i> User-friendly GUI.</li>
+                    </ul>
+
+                    <p>
+                        The Machine Learning model will be shown as website or an application to the users on their particular platforms. Initially user will be needed to make an individual account to use the services and after entering the system, users will require to fill
+                        the necessary details whose accuracy will result in accuracy of the outputs. User data will be processed thoroughly hence, they will be provided with highly accurate prediction as possible.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 offset-lg-4">
+                    <div class="section-header wow fadeIn" data-wow-duration="1s">
+                        <h3 class="section-title">Features</h3>
+                        <span class="section-divider"></span>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-5 features-img">
+                    <img src="{{ url_for('static', filename='img/product-features.png')}}" alt="" class="wow fadeInLeft">
+                </div>
+
+                <div class="col-lg-8 col-md-7 ">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-6 box wow fadeInRight">
+                            <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                            <h4 class="title"><a href="">Prevention</a></h4>
+                            <p class="description">Delay in the treatment is prevented when predicted to have CHD(Coronary Heart Disease).</p>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 box wow fadeInRight" data-wow-delay="0.2s">
+                            <div class="icon"><i class="ion-social-buffer-outline"></i></div>
+                            <h4 class="title"><a href="">Maintainence</a></h4>
+                            <p class="description">Maintaining an API is easier than handling large piles of filed records.</p>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 box wow fadeInRight" data-wow-delay="0.3s">
+                            <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
+                            <h4 class="title"><a href="">Accuracy</a></h4>
+                            <p class="description">Inputs provided to the system will result in accurate predictions to be majorly sure.</p>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 box wow fadeInRight" data-wow-delay="0.1s">
+                            <div class="icon"><i class="ion-ios-flask-outline"></i></div>
+                            <h4 class="title"><a href="">Precision</a></h4>
+                            <p class="description">Result will be the computation of inputs and records of user health data.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Featuress Section -->
+
+    <!-- ======= Advanced Features Section ======= -->
+    <section id="advanced-features">
+        <div class="features-row section-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>MA URIs and IDs</h2>
+
+                        <table style="width:100%; margin-left:0px; ">
+
+                            <tr style="border-bottom : 5px solid #dddddd;">
+                                <th style="border-right:2px solid #dddddd; padding-right:4px">Parameters</th>
+                                <th style="padding:5px; border-right:2px solid #dddddd;">Description</th>
+                                <th style="padding:5px;">Example</th>
+                            </tr>
+                            <tr style="border-bottom : 2px solid #dddddd;">
+                                <td style="border-right:2px solid #dddddd; padding-right:5px">MA category ID</td>
+                                <td style="padding:5px; border-right:2px solid #dddddd;">The unique string identifying the MA category.</td>
+                                <td style="padding:5px;">Prediction</td>
+                            </tr>
+                            <tr style="border-bottom : 2px solid #dddddd;">
+                                <td style="border-right:2px solid #dddddd; padding-right:5px">MA user ID</td>
+                                <td style="padding:5px; border-right:2px solid #dddddd;">The unique string identifying the MA user that you can find at the end of the MA URI for the user. The ID of the current user can be obtained via the Web API endpoint.</td>
+                                <td style="padding:5px;">6e389e271ce81396b7f19a959ca6103987dd40d8</td>
+                            </tr>
+                            <tr>
+                                <td style="border-right:2px solid #dddddd; padding-right:5px">MA URL</td>
+                                <td style="padding:5px; border-right:2px solid #dddddd;">An HTML link that opens MA resources/services to the client, who is determined by the his/her device and account entry</td>
+                                <td style="padding:5px;">http://127.0.0.1:5001/</td>
+                            </tr>
+
+                        </table>
+
+                        <div class="features-row section-bg">
+                            <div class="col-122">
+                                <h2>Requests</h2>
+                                <p>The Medical Assistant Web API is based on REST principles. Data resources are accessed via standard HTTPS requests in UTF-8 format to an API endpoint. Where possible, Web API uses appropriate HTTP verbs for each action:</p>
+
+                                <table style="margin-left:1px;">
+
+                                    <tr style="border-bottom : 5px solid #dddddd;">
+                                        <th style="border-right:2px solid #dddddd;">Method</th>
+                                        <th style="padding-left:10px; border-bottom:2px solid #dddddd;">Action</th>
+                                    </tr>
+                                    <tr style="border-bottom : 2px solid #dddddd;">
+                                        <td style="border-right:2px solid #dddddd">GET</td>
+                                        <td style="padding-left:10px;">Retrieves resources</td>
+                                    </tr>
+                                    <tr style="border-bottom : 2px solid #dddddd;">
+                                        <td style="border-right:2px solid #dddddd">POST</td>
+                                        <td style="padding-left:10px;">Creates resources</td>
+                                    </tr>
+                                    <tr style="border-bottom : 2px solid #dddddd;">
+                                        <td style="border-right:2px solid #dddddd">PUT</td>
+                                        <td style="padding-left:10px;">Changes and/or replaces resources or collections</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-right:2px solid #dddddd">DELETE</td>
+                                        <td style="padding-left:10px;">Deletes resources</td>
+                                    </tr>
+
+                                </table>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-121">
+                            <h2 id="col1">Responses</h2>
+                            <p class="col-121">Web API returns all response data as a JSON object. See the <a href="{{ url_for('objectModel') }}">Web API Object Model</a> for a description of all the retrievable objects.</p>
+                            </br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        </div>
+        </div>
+
+    </section>
+    <!-- End Advanced Featuress Section -->
+
+
+
+    <!-- ======= More Features Section ======= -->
+    <section id="more-features" class="">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title" style="font-size: 2.5em; color: white; font-weight: 500;">Project Goal</h3>
+                <span class="section-divider"></span>
+                <p class="section-description" style="color: white;">Efficient health system</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="box wow fadeInLeft">
+                        <div class="icon"><i class="ion-ios-filing-outline"></i></div>
+                        <h4 class="title"><a href="">Record Maintainence</a></h4>
+                        <p class="description">User inputs are a major part of the whole process which will compute their prediction and so maintainence of those input records is handled in such a way that there is no confusion.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="box wow fadeInRight">
+                        <div class="icon"><i class="ion-ios-medkit-outline"></i></div>
+                        <h4 class="title"><a href="">Timed-treatment</a></h4>
+                        <p class="description">Prediction of a person's health in advance means prevention which leads to timely treatment and also to take careful steps regarding health issues which may be stopped before occuring.</p>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6">
+                    <div class="box wow fadeInRight">
+                        <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+                        <h4 class="title"><a href="">Data Security</a></h4>
+                        <p class="description">Once the API is been used on a certain platform it has to ensure a properly secure environment before user inputs information so that there should be no issue in data security.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="box wow fadeInLeft">
+                        <div class="icon"><i class="ion-ios-chatboxes-outline"></i></div>
+                        <h4 class="title"><a href="">Other services</a></h4>
+                        <p class="description">Once the system is established in the market we aspire to provide many additional services so as to make this step a huge contribution towards the health management in our society.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End More Features Section -->
+
+    <!-- ======= working ======= -->
+    <section id="working">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="section-header">
+                    <h2>Response Status Codes</h2>
+                    <p>Web API uses the following response status codes, as defined in the <a href="https://www.ietf.org/rfc/rfc2616.txt" target="_blank" class=" externalLink">RFC 2616</a> and <a href="https://www.ietf.org/rfc/rfc6585.txt" target="_blank"
+                            class=" externalLink">RFC 6585</a>:</p>
+
+                    <table>
+
+                        <tr style="border-bottom : 5px solid #eff5f5;">
+                            <th style="border-right:5px solid #eff5f5">Status Code</th>
+                            <th style="padding-left:10px;">Description</th>
+                        </tr>
+                        <tr style="border-bottom : 2px solid #eff5f5;">
+                            <td style="border-right:5px solid #eff5f5">200</td>
+                            <td style="padding:10px;">OK - The request has succeeded. The client can read the result of the request in the body and the headers of the response.</td>
+                        </tr>
+                        <tr style="border-bottom : 2px solid #eff5f5;">
+                            <td style="border-right:5px solid #eff5f5">201</td>
+                            <td style="padding:10px;">Created - The request has been fulfilled and resulted in a new resource being created.</td>
+                        </tr>
+                        <tr style="border-bottom : 2px solid #eff5f5;">
+                            <td style="border-right:5px solid #eff5f5">202</td>
+                            <td style="padding:10px;">Accepted - The request has been accepted for processing, but the processing has not been completed.</td>
+                        </tr>
+                        <tr style="border-bottom : 2px solid #eff5f5;">
+                            <td style="border-right:5px solid #eff5f5">204</td>
+                            <td style="padding:10px;">No Content - The request has succeeded but returns no message body.</td>
+                        </tr>
+                        <tr style="border-bottom : 2px solid #eff5f5;">
+                            <td style="border-right:5px solid #eff5f5">304</td>
+                            <td style="padding:10px;">Not Modified.</td>
+                        </tr>
+                        <tr style="border-bottom : 2px solid #eff5f5;">
+                            <td style="border-right:5px solid #eff5f5">400</td>
+                            <td style="padding:10px;">Bad Request - The request could not be understood by the server due to malformed syntax. The message body will contain more information.</td>
+                        </tr>
+                        <tr style="border-bottom : 2px solid #eff5f5;">
+                            <td style="border-right:5px solid #eff5f5">401</td>
+                            <td style="padding:10px;">Unauthorized - The request requires user authentication or, if the request included authorization credentials, authorization has been refused for those credentials.</td>
+                        </tr>
+                        <tr style="border-bottom : 2px solid #eff5f5;">
+                            <td style="border-right:5px solid #eff5f5">403</td>
+                            <td style="padding:10px;">Forbidden - The server understood the request, but is refusing to fulfill it.</td>
+                        </tr>
+                        <tr style="border-bottom : 2px solid #eff5f5;">
+                            <td style="border-right:5px solid #eff5f5">404</td>
+                            <td style="padding:10px;">Not Found - The requested resource could not be found. This error can be due to a temporary or permanent condition.</td>
+                        </tr>
+                        <tr style="border-bottom : 2px solid #eff5f5;">
+                            <td style="border-right:5px solid #eff5f5">429</td>
+                            <td style="padding:10px;">Too Many Requests - Rate limiting has been applied.</td>
+                        </tr>
+                        <tr style="border-bottom : 2px solid #eff5f5;">
+                            <td style="border-right:5px solid #eff5f5">500</td>
+                            <td style="padding:10px;">Internal Server Error. You should never receive this error because our clever coders catch them all … but if you are unlucky enough to get one, please report it to us through a comment at the bottom of this page.</td>
+                        </tr>
+                        <tr style="border-bottom : 2px solid #eff5f5;">
+                            <td style="border-right:5px solid #eff5f5">502</td>
+                            <td style="padding:10px;">Bad Gateway - The server was acting as a gateway or proxy and received an invalid response from the upstream server.</td>
+                        </tr>
+                        <tr>
+                            <td style="border-right:5px solid #eff5f5">503</td>
+                            <td style="padding:10px;">Service Unavailable - The server is currently unable to handle the request due to a temporary condition which will be alleviated after some delay. You can choose to resend the request again.</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+    </section>
+
+    <section id="last" class="section-bg pb-5">
+        <div class="container">
+            <div class="bg">
+                <h2 id="response-schema">Response Schema</h2>
+                <p id="last">Web API uses two different formats to describe an error:</p>
+                <ul>
+                    <li>Authentication Error Object</li>
+                    <li>Regular Error Object</li>
+                </ul>
+            </div>
+
+            <h2 id="last">Authentication Error Object</h2>
+            <p id="last">Whenever the application makes requests related to authentication or authorization to Web API, such as retrieving an access token or refreshing an access token, the error response follows <a href="https://tools.ietf.org/html/rfc6749" target="_blank"
+                    class=" externalLink">RFC 6749</a> on the OAuth 2.0 Authorization Framework.</p>
+
+            <table>
+
+                <tr style="border-bottom : 5px solid #dddddd;">
+                    <th style="border-right:2px solid #dddddd; padding-right:10px">Key</th>
+                    <th style="border-right:2px solid #dddddd; padding-right:10px">Value Type</th>
+                    <th>Value Description</th>
+                </tr>
+                <tr style="border-bottom : 2px solid #dddddd;">
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">error</td>
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">string</td>
+                    <td>A high level description of the error as specified in <a href="https://tools.ietf.org/html/rfc6749#section-5.2" target="_blank" class=" externalLink">RFC 6749 Section 5.2</a>.</td>
+                </tr>
+                <tr>
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">error_description</td>
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">string</td>
+                    <td>A more detailed description of the error as specified in <a href="https://tools.ietf.org/html/rfc6749#section-4.1.2.1" target="_blank" class=" externalLink">RFC 6749 Section 4.1.2.1</a>.</td>
+                </tr>
+
+            </table>
+
+            <p class="aft-w">Here is an example of a failing request to refresh an access token.</p>
+
+            <div class="language-shell">
+                <div class="highlight">
+                    <pre class="highlight" style="padding: 1rem;"><span class="o">{</span></br><span class="s2">	"status" : </span> <span class="o">401</span>,</br><span class="s2">	"error" : </span> <span class="o">"Unauthorized access. BLOCKED!"</span></br><span class="o">}</span></pre>
+                </div>
+            </div>
+
+            <h2 id="last">Regular Error Object</h2>
+            <p id="last">Apart from the response code, unsuccessful responses return a JSON object containing the following information:</p>
+
+            <table>
+
+                <tr style="border-bottom : 5px solid #dddddd;">
+                    <th style="border-right:2px solid #dddddd; padding-right:10px">Key</th>
+                    <th style="border-right:2px solid #dddddd; padding-right:10px">Value Type</th>
+                    <th>Value Description</th>
+                </tr>
+                <tr style="border-bottom : 2px solid #dddddd;">
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">status</td>
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">integer</td>
+                    <td>The HTTP status code that is also returned in the response header. For further information, see <a href="#response-status-codes">Response Status Codes</a>.</td>
+                </tr>
+                <tr>
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">message</td>
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">string</td>
+                    <td>A short description of the cause of the error.</td>
+                </tr>
+
+            </table>
+
+            <p class="aft-x">Here, for example is the error that occurs when trying to fetch information for a non-existent track:</p>
+
+            <div class="language-shell2">
+                <div class="highlight">
+                    <pre class="highlight" style="padding: 1rem;"><span class="o">{</span></br><span class="s2">	"status" : </span> <span class="o">400,</span></br><span class="s2">	"request URL" : </span> <span class="o">request.url,</span></br><span class="s2">	"error": </span><span class="o">"Please check the values passed. Please refer to the documentation."</span></br><span class="o">}</span></pre>
+                </div>
+            </div>
+
+            <!-- <h2 id="last">Authentication</h2>
+            <p id="last">All requests to Web API require authentication. This is achieved by logging in into the individual user accounts which requires their username and password information.</p> -->
+
+        </div>
+        </div>
+    </section>
+    <!-- End working Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact">
+        <div class="container">
+            <div class="row wow fadeInUp">
+                <div class="col-lg-4 col-md-4">
+                    <div class="contact-about">
+                        <h3>MA</h3>
+                        <p>A web solution to implement major health related service, with advancement of technology we aspire to make our society better by developing in every aspect as possible.</p>
+
+                        <div class="social-links">
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="info">
+                        <div>
+                            <i class="ion-ios-email-outline"></i>
+                            <p>mawebtech@example.com</p>
+                        </div>
+                        <div>
+                            <i class="ion-ios-telephone-outline"></i>
+                            <p>+91 81286 10065</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-8">
+                    <div class="form">
+                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                            <div class="form-row">
+
+                                <div class="form-group col-lg-6">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                                    <div class="validate"></div>
+                                </div>
+
+                                <div class="form-group col-lg-6">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+                                    <div class="validate"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                                <div class="validate"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                                <div class="validate"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+
+                            <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="copyright" style="margin-left:26px">
+            &copy; Copyright 2020 <strong>Medical Assistant.</strong> All Rights Reserved
+        </div>
+    </footer>
+    <!-- End  Footer -->
+
+    <!-- Vendor JS Files -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/venobox/venobox.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/superfish/superfish.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/hoverIntent/hoverIntent.js') }}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+
+</body>
+
+</html>

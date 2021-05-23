@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .go-back {
+            text-decoration: none;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 2rem;
+            font-weight: bolder;
+            color: white;
+            padding: .5rem 1rem;
+            background-color: rgba(0, 0, 0, 0.849);
+            transform: rotateY(180deg);
+        }
+        
+        #hed {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            /* font-weight: 500; */
+            color: rgb(56, 56, 56);
+            padding: 1rem;
+        }
+        
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media screen and (max-width: 900px) {
+            #customers {
+                width: 90%;
+            }
+        }
+        
+        #customers td,
+        #customers th {
+            padding: 1rem 0.8rem;
+        }
+        
+        #customers tr td:nth-child(1) {
+            width: 15%;
+        }
+        
+        #customers tr td:nth-child(2) {
+            width: 70%;
+        }
+        
+        #customers tr td:nth-child(3) {
+            width: 15%;
+        }
+        
+        #customers tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        #customers tr:hover {
+            background: linear-gradient(45deg, rgba(29, 224, 152, 0.2), rgba(29, 199, 205, 0.2));
+        }
+        
+        #customers thead tr {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            text-align: left;
+            background: linear-gradient(45deg, #1de099, #1dc8cd);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="{{url_for('index')}}" class="go-back">&#10140;</a>
+    <!-- &#10140; -->
+
+    <h1 id="hed">MA : Web API Attribute Table</h2>
+        <table id="customers">
+            <thead>
+                <tr>
+                    <th>KEY</th>
+                    <th>VALUE DESCRIPTION</th>
+                    <th>VALUE TYPE</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>user-id</td>
+                <td>
+                    Every user will have an individual account which will require their user-id.
+                </td>
+                <td>String</td>
+            </tr>
+            <tr>
+                <td>sex</td>
+                <td>
+                    Specification if a person comes under male or female category, as there are slight differences in effects of health disease in different sexes. 0 = Female, 1 = Male.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr>
+                <td>age</td>
+                <td>
+                    age plays a major role when it comes to health, therefore specification of health in years should be provided
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr>
+                <td>education</td>
+                <td>
+                    1 = Some High School; 2 = High School or GED; 3 = Some College or Vocational School; 4 = college.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr>
+                <td>currentSmoker</td>
+                <td>
+                    Whether or not the person smokes at present, it defines their behavioural health issues.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr>
+                <td>cigsPerDay</td>
+                <td>Average cigarettes a person smokes per day</td>
+                <td>Integer</td>
+            </tr>
+            <tr>
+                <td>BPMeds</td>
+                <td>
+                    Whether or not the person is on blood pressure medication. 0 = Not on Blood Pressure medications; 1 = Is on Blood Pressure medications.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr>
+                <td>prevalentStroke</td>
+                <td>
+                    Whether or not the person previously had a stroke. 0 = no, 1 = yes.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr>
+                <td>prevalentHyp</td>
+                <td>
+                    Whether or not the person was hypertensive. 0 = no, 1 = yes.
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr>
+                <td>diabetes</td>
+                <td>Whether or not the person has diabetes. 0 = no, 1 = yes.</td>
+                <td>Integer</td>
+            </tr>
+            <tr>
+                <td>sysBP</td>
+                <td>
+                    Value of person's systolic blood pressure. Value has to be provided in mmHg.
+                </td>
+                <td>Float</td>
+            </tr>
+            <tr>
+                <td>diaBP</td>
+                <td>
+                    Value of person's diastolic blood pressure. Value has to be provided in mmHg.
+                </td>
+                <td>Float</td>
+            </tr>
+            <tr>
+                <td>BMI</td>
+                <td>
+                    Body Mass Index of the person. Body Mass Index calculated as: Weight (kg) / Height(meter-squared).
+                </td>
+                <td>Float</td>
+            </tr>
+            <tr>
+                <td>heartRate</td>
+                <td>
+                    In medical research, variables such as heart rate though in fact discrete, yet are considered continuous because of large number of possible values. Value has to be provided in Beats/Min (Ventricular).
+                </td>
+                <td>Integer</td>
+            </tr>
+            <tr>
+                <td>glucose</td>
+                <td>
+                    Value of person's Glucose level. Value has to be provided in mg/dL.
+                </td>
+                <td>Float</td>
+            </tr>
+        </table>
+</body>
+
+</html>

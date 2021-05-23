@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Health Record</title>
+    <link href="{{ url_for('static', filename='css/ApiCall.css') }}" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#prediction-form").submit(function(e) {
+                e.preventDefault()
+                    //Loading...
+                $("#status").html("Loading...");
+                $("#req_url").html("Loading...");
+                $("#prediction").html("Loading...");
+                $.ajax({
+                    url: '/submit',
+                    type: "POST",
+                    data: $("#prediction-form").serialize(),
+                    success: function(data) {
+                        JSONdata = JSON.parse(data)
+                        console.log(JSONdata)
+                        $("#status").html(JSONdata['status']);
+                        $("#req_url").html(JSONdata['request URL']);
+                        $("#prediction").html(JSONdata['prediction']);
+                    },
+                    error: function(e) {
+                        console.log("error occured")
+                    }
+
+                });
+
+            });
+        });
+    </script>
+
+    <style>
+        .go-back {
+            text-decoration: none;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 2rem;
+            font-weight: bolder;
+            color: white;
+            padding: .5rem 1rem;
+            background-color: rgba(0, 0, 0, 0.849);
+            transform: rotateY(180deg);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <a href="{{url_for('index')}}" class="go-back">&#10140;</a>
+
+    <h1 class="my-4 text-center d-lg-none d-block">MA API Preview</h1>
+    <div class="container">
+        <div class="row row-cols-lg-2 row-cols-md-1 row-cols-sm-1">
+            <div class="form-container">
+
+                <h1 class="my-4 d-none d-lg-block">MA API Preview</h1>
+                <form id="prediction-form" method="POST" action="">
+                    <section class="row w-100">
+
+                        <div class="form-group col-6 d-flex">
+                            <div>
+                                <label class="d-block mb-1">Sex</label>
+                                <div class="form-check d-inline-block">
+                                    <input class="form-check-input" type="radio" name="sex" id="male" value="1" required  checked/>
+                                    <label class="form-check-label" for="male">
+											Male
+										</label>
+                                </div>
+                                <div class="form-check d-inline-block">
+                                    <input class="form-check-input" type="radio" name="sex" id="female" value="0" required/>
+                                    <label class="form-check-label" for="female">
+											Female
+										</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-6">
+                            <label for="ageInput" class="mb-1">Age</label>
+                            <input class="form-control" id="ageInput" type="number" name="age" placeholder="20" required value="20"/>
+                        </div>
+                    </section>
+
+                    <section class="row w-100 mt-2">
+                        <div class="form-group col-12">
+                            <div>
+                                <label class="form-label">Education</label>
+                                <select class="form-select col-6" name="education" required>
+										<option value="1">Some High School</option>
+										<option value="2">High School or GED</option>
+										<option value="3">
+											Some College or Vocational School
+										</option>
+										<option value="4">college</option>
+									</select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <h5 class="mt-4 text-black">
+                        Medical Habitual History
+                    </h5>
+
+                    <section class="row w-100">
+                        <div class="form-group col-6">
+                            <div>
+                                <label class="d-block mb-2">Current Smoker</label>
+                                <div class="form-check d-inline-block">
+                                    <input class="form-check-input" type="radio" name="currentSmoker" id="iscurrentSmoker" value="1" required checked/>
+                                    <label class="form-check-label" for="iscurrentSmoker">
+											Yes
+										</label>
+                                </div>
+                                <div class="form-check d-inline-block">
+                                    <input class="form-check-input" type="radio" name="currentSmoker" id="notcurrentSmoker" value="0" required/>
+                                    <label class="form-check-label" for="notcurrentSmoker">
+											No
+										</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-6">
+                            <label class="form-label">Cigarettes Per Day </label>
+                            <input class="form-control" type="number" name="cigsPerDay" value="30" required/>
+                        </div>
+                    </section>
+
+                    <section class="row w-100 mt-2">
+                        <div class="form-group col-6">
+                            <div>
+                                <label class="d-block mb-2">Blood-Pressure Medicines</label
+									>
+									<div class="form-check d-inline-block">
+										<input class="form-check-input" type="radio" name="BPMeds" id="isBPMeds" value="1" required checked/>
+										<label class="form-check-label" for="isBPMeds">
+											Yes
+										</label>
+                            </div>
+                            <div class="form-check d-inline-block">
+                                <input class="form-check-input" type="radio" name="BPMeds" id="notBPMeds" value="0" required/>
+                                <label class="form-check-label" for="notBPMeds">
+										No
+									</label>
+                            </div>
+                        </div>
+            </div>
+
+            <div class="form-group col-6">
+                <div>
+                    <label class="d-block mb-2">Prevalent stroke</label>
+                    <div class="form-check d-inline-block">
+                        <input class="form-check-input" type="radio" name="prevalentStroke" id="isprevalentStroke" value="1" required checked/>
+                        <label class="form-check-label" for="isprevalentStroke">
+											Yes
+										</label>
+                    </div>
+                    <div class="form-check d-inline-block">
+                        <input class="form-check-input" type="radio" name="prevalentStroke" id="notprevalentStroke" value="0" required />
+                        <label class="form-check-label" for="notprevalentStroke">
+							No
+						</label>
+                    </div>
+                </div>
+            </div>
+            </section>
+
+            <section class="row w-100 mt-2">
+                <div class="form-group col-6">
+                    <div>
+                        <label class="d-block mb-2">Prevalent Hypertensive</label
+									>
+                        <div class="form-check d-inline-block">
+                            <input class="form-check-input" type="radio" name="prevalentHyp" id="isprevalentHyp"value="1" required checked/>
+                            <label class="form-check-label" for="isprevalentHyp">
+                                Yes
+                            </label>
+                    </div>
+                    <div class="form-check d-inline-block">
+                        <input class="form-check-input" type="radio" name="prevalentHyp" id="notprevalentHyp" value="0" required/>
+                        <label class="form-check-label" for="notprevalentHyp">
+											No
+										</label>
+                    </div>
+                </div>
+        </div>
+
+        <div class="form-group col-6">
+            <div>
+                <label class="d-block mb-2">Diabetes</label>
+                <div class="form-check d-inline-block">
+                    <input class="form-check-input" type="radio" name="diabetes" id="isdiabetes" value="1" required checked/>
+                    <label class="form-check-label" for="isdiabetes">
+											Yes
+										</label>
+                </div>
+                <div class="form-check d-inline-block">
+                    <input class="form-check-input" type="radio" name="diabetes" id="notdiabetes" value="0" required/>
+                    <label class="form-check-label" for="notdiabetes">
+											No
+										</label>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <section class="row w-100 mt-2">
+            <div class="form-group col-6">
+                <label class="form-label">Systolic Blood Pressure </label>
+                <input class="form-control" type="number" name="sysBP" placeholder="100" step=".01" required value="100"/>
+            </div>
+
+            <div class="form-group col-6">
+                <label class="form-label">Diastolic Blood Pressure</label>
+                <input class="form-control" type="number" name="diaBP" placeholder="120" step=".01" required value="120"/>
+            </div>
+        </section>
+
+        <section class="row w-100 mt-2">
+            <div class="form-group col-6">
+                <label class="form-label">Body Mass Index(BMI)</label>
+                <input class="form-control" type="number" name="BMI" placeholder="30" step=".01" required value="30"/>
+            </div>
+
+            <div class="form-group col-6">
+                <label class="form-label">Heart Rate</label>
+                <input class="form-control" type="number" name="heartRate" placeholder="60" step=".01" required value="60"/>
+            </div>
+        </section>
+
+        <section class="row w-100 mt-2">
+            <div class="form-group col-6">
+                <label class="form-label">Glucose</label>
+                <input class="form-control" type="number" name="glucose" placeholder="130" step=".01" required value="130"/>
+            </div>
+
+            <div class="form-group col-6 d-flex justify-content-center align-items-end">
+                <input type="submit" id="callAPI" value="SEND" class="btn btn-primary w-100" />
+            </div>
+        </section>
+        </form>
+    </div>
+
+    <div class="">
+        <h4 class="my-4">Respose</h4>
+
+        <div class="code code-container px-3 py-4">
+            <h6 class="text-white-50">JSON Response will be displayed here.</h6>
+            <p class="text-white-50">Fill the values and press the <span class="text-primary fw-bold">SEND</span> button to see the response.</p>
+            <code id='response-code'>
+                {
+                    <div class='response-box'>
+                        <var>status</var> : <samp id="status">null</samp>,<br>
+                        <var>request URL</var> : <samp id="req_url">null</samp>,<br>
+                        <var>prediction</var> : <samp id="prediction">null</samp>
+                    </div>
+                    
+                }
+            </code>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
