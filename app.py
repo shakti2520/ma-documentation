@@ -8,7 +8,7 @@ import requests
 app = Flask(__name__)
 
 
-BASE = "https://ma-api-call.herokuapp.com/"
+BASE = "https://ma-api-py.herokuapp.com/"
 
 ####################################### Home screen ##########################
 @app.route('/')
