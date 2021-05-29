@@ -33,6 +33,9 @@
                     },
                     error: function(e) {
                         console.log("error occured "+e)
+                        $("#status").html("Error occured");
+                        $("#req_url").html("Error occured");
+                        $("#prediction").html("Error occured");
                     }
 
                 });
@@ -75,7 +78,7 @@
                             <div>
                                 <label class="d-block mb-1">Sex</label>
                                 <div class="form-check d-inline-block">
-                                    <input class="form-check-input" type="radio" name="sex" id="male" value="1" required  checked/>
+                                    <input class="form-check-input" type="radio" name="sex" id="male" value="1" required  />
                                     <label class="form-check-label" for="male">
 											Male
 										</label>
@@ -91,7 +94,7 @@
 
                         <div class="form-group col-6">
                             <label for="ageInput" class="mb-1">Age</label>
-                            <input class="form-control" id="ageInput" type="number" name="age" placeholder="20" required value="20"/>
+                            <input class="form-control" id="ageInput" type="number" name="age" placeholder="20" required />
                         </div>
                     </section>
 
@@ -120,7 +123,7 @@
                             <div>
                                 <label class="d-block mb-2">Current Smoker</label>
                                 <div class="form-check d-inline-block">
-                                    <input class="form-check-input" type="radio" name="currentSmoker" id="iscurrentSmoker" value="1" required checked/>
+                                    <input class="form-check-input" type="radio" name="currentSmoker" id="iscurrentSmoker" value="1" required />
                                     <label class="form-check-label" for="iscurrentSmoker">
 											Yes
 										</label>
@@ -136,7 +139,7 @@
 
                         <div class="form-group col-6">
                             <label class="form-label">Cigarettes Per Day </label>
-                            <input class="form-control" type="number" name="cigsPerDay" value="30" required/>
+                            <input class="form-control" type="number" name="cigsPerDay"  required/>
                         </div>
                     </section>
 
@@ -146,7 +149,7 @@
                                 <label class="d-block mb-2">Blood-Pressure Medicines</label
 									>
 									<div class="form-check d-inline-block">
-										<input class="form-check-input" type="radio" name="BPMeds" id="isBPMeds" value="1" required checked/>
+										<input class="form-check-input" type="radio" name="BPMeds" id="isBPMeds" value="1" required />
 										<label class="form-check-label" for="isBPMeds">
 											Yes
 										</label>
@@ -164,7 +167,7 @@
                 <div>
                     <label class="d-block mb-2">Prevalent stroke</label>
                     <div class="form-check d-inline-block">
-                        <input class="form-check-input" type="radio" name="prevalentStroke" id="isprevalentStroke" value="1" required checked/>
+                        <input class="form-check-input" type="radio" name="prevalentStroke" id="isprevalentStroke" value="1" required />
                         <label class="form-check-label" for="isprevalentStroke">
 											Yes
 										</label>
@@ -185,7 +188,7 @@
                         <label class="d-block mb-2">Prevalent Hypertensive</label
 									>
                         <div class="form-check d-inline-block">
-                            <input class="form-check-input" type="radio" name="prevalentHyp" id="isprevalentHyp"value="1" required checked/>
+                            <input class="form-check-input" type="radio" name="prevalentHyp" id="isprevalentHyp"value="1" required />
                             <label class="form-check-label" for="isprevalentHyp">
                                 Yes
                             </label>
@@ -203,7 +206,7 @@
             <div>
                 <label class="d-block mb-2">Diabetes</label>
                 <div class="form-check d-inline-block">
-                    <input class="form-check-input" type="radio" name="diabetes" id="isdiabetes" value="1" required checked/>
+                    <input class="form-check-input" type="radio" name="diabetes" id="isdiabetes" value="1" required />
                     <label class="form-check-label" for="isdiabetes">
 											Yes
 										</label>
@@ -221,31 +224,31 @@
         <section class="row w-100 mt-2">
             <div class="form-group col-6">
                 <label class="form-label">Systolic Blood Pressure </label>
-                <input class="form-control" type="number" name="sysBP" placeholder="100" step=".01" required value="100"/>
+                <input class="form-control" type="number" name="sysBP" placeholder="100" step=".01" required />
             </div>
 
             <div class="form-group col-6">
                 <label class="form-label">Diastolic Blood Pressure</label>
-                <input class="form-control" type="number" name="diaBP" placeholder="120" step=".01" required value="120"/>
+                <input class="form-control" type="number" name="diaBP" placeholder="120" step=".01" required />
             </div>
         </section>
 
         <section class="row w-100 mt-2">
             <div class="form-group col-6">
                 <label class="form-label">Body Mass Index(BMI)</label>
-                <input class="form-control" type="number" name="BMI" placeholder="30" step=".01" required value="30"/>
+                <input class="form-control" type="number" name="BMI" placeholder="30" step=".01" required />
             </div>
 
             <div class="form-group col-6">
                 <label class="form-label">Heart Rate</label>
-                <input class="form-control" type="number" name="heartRate" placeholder="60" step=".01" required value="60"/>
+                <input class="form-control" type="number" name="heartRate" placeholder="60" step=".01" required />
             </div>
         </section>
 
         <section class="row w-100 mt-2">
             <div class="form-group col-6">
                 <label class="form-label">Glucose</label>
-                <input class="form-control" type="number" name="glucose" placeholder="130" step=".01" required value="130"/>
+                <input class="form-control" type="number" name="glucose" placeholder="130" step=".01" required />
             </div>
 
             <div class="form-group col-6 d-flex justify-content-center align-items-end">
