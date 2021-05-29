@@ -24,9 +24,11 @@
                     data: $("#prediction-form").serialize(),
                     success: function(data) {
                         JSONdata = JSON.parse(data)
-                        console.log(JSONdata)
+                        var url = JSONdata['request URL'];
+                        var final_url = String(url).replaceAll("&","&amp;")
+                        console.log(final_url)
                         $("#status").html(JSONdata['status']);
-                        $("#req_url").html(JSONdata['request URL']);
+                        $("#req_url").html(final_url);
                         $("#prediction").html(JSONdata['prediction']);
                     },
                     error: function(e) {
