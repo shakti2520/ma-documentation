@@ -358,15 +358,16 @@
         <div class="container">
             <div class="bg">
                 <h2 id="response-schema">Response Schema</h2>
-                <p id="last">Web API uses two different formats to describe an error:</p>
+                <p id="last">Web API uses two different formats as a response.</p>
                 <ul>
-                    <li>Authentication Error Object</li>
+                    <!-- <li>Authentication Error Object</li> -->
+                    <li>Regular Response Object</li>
                     <li>Regular Error Object</li>
                 </ul>
             </div>
 
-            <h2 id="last">Authentication Error Object</h2>
-            <p id="last">Whenever the application makes requests related to authentication or authorization to Web API, such as retrieving an access token or refreshing an access token, the error response follows <a href="https://tools.ietf.org/html/rfc6749" target="_blank"
+            <!-- <h2 id="last">Authentication Error Object</h2> -->
+            <!-- <p id="last">Whenever the application makes requests related to authentication or authorization to Web API, such as retrieving an access token or refreshing an access token, the error response follows <a href="https://tools.ietf.org/html/rfc6749" target="_blank"
                     class=" externalLink">RFC 6749</a> on the OAuth 2.0 Authorization Framework.</p>
 
             <table>
@@ -395,9 +396,46 @@
                 <div class="highlight">
                     <pre class="highlight" style="padding: 1rem;"><span class="o">{</span></br><span class="s2">	"status" : </span> <span class="o">401</span>,</br><span class="s2">	"error" : </span> <span class="o">"Unauthorized access. BLOCKED!"</span></br><span class="o">}</span></pre>
                 </div>
+            </div> -->
+
+            <h3 class="mt-4" id="last">Regular Response Object</h3>
+            <p id="last">On successful calling a JSON response will be returned like this.</p>
+
+            <table>
+
+                <tr style="border-bottom : 5px solid #dddddd;">
+                    <th style="border-right:2px solid #dddddd; padding-right:10px">Key</th>
+                    <th style="border-right:2px solid #dddddd; padding-right:10px">Value Type</th>
+                    <th>Value Description</th>
+                </tr>
+                <tr style="border-bottom : 2px solid #dddddd;">
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">status</td>
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">integer</td>
+                    <td>The HTTP status code that is also returned in the response header. For further information, see <a href="#response-status-codes">Response Status Codes</a>.</td>
+                </tr>
+                <tr style="border-bottom : 2px solid #dddddd;">
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">request url</td>
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">integer</td>
+                    <td>The request url. </td>
+                </tr>
+                <tr>
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">prediction</td>
+                    <td style="border-right:2px solid #dddddd; padding-right:10px">integer</td>
+                    <td>The prediction according to the data provided</td>
+                </tr>
+
+            </table>
+
+            <p class="aft-x">Here, for example is the error that occurs when trying to fetch information for a non-existent track:</p>
+
+            <div class="language-shell2">
+                <div class="highlight">
+                    <pre class="highlight" style="padding: 1rem;"><span class="o">{</span></br><span class="s2">	"status" : </span> <span class="o">200,</span></br><span class="s2">	"request URL" : </span> <span class="o">request.url,</span></br><span class="s2">	"prediction": </span><span class="o">1</span></br><span class="o">}</span></pre>
+                </div>
             </div>
 
-            <h2 id="last">Regular Error Object</h2>
+
+            <h3 class="mt-4" id="last">Regular Error Object</h3>
             <p id="last">Apart from the response code, unsuccessful responses return a JSON object containing the following information:</p>
 
             <table>
@@ -424,7 +462,7 @@
 
             <div class="language-shell2">
                 <div class="highlight">
-                    <pre class="highlight" style="padding: 1rem;"><span class="o">{</span></br><span class="s2">	"status" : </span> <span class="o">400,</span></br><span class="s2">	"request URL" : </span> <span class="o">request.url,</span></br><span class="s2">	"error": </span><span class="o">"Please check the values passed. Please refer to the documentation."</span></br><span class="o">}</span></pre>
+                    <pre class="highlight" style="padding: 1rem;"><span class="o">{</span></br><span class="s2">	"status" : </span> <span class="o">400,</span></br><span class="s2">	"error": </span><span class="o">"Please check the values passed. Please refer to the documentation."</span></br><span class="o">}</span></pre>
                 </div>
             </div>
 
@@ -435,6 +473,137 @@
         </div>
     </section>
     <!-- End working Section -->
+
+    <section class="section-bg pb-5">
+        <div class="container">
+            <h1>Code Examples</h1>
+
+            <h4>Python</h4>
+
+            <div class="language-shell2 mt-3">
+                <div class="highlight">
+                    <pre class="text-white">
+                        <code>
+    <span class="o">def</span> callMAA(details=dict()):
+        BASE = "https://ma-api-py.herokuapp.com/"
+        response = <span class="o">requests</span>.get(BASE+"predict", {"sex": details["sex"],
+                                                "age": details["age"],
+                                                "education": details["education"],
+                                                "currentSmoker": details["currentSmoker"],
+                                                "cigsPerDay": details["cigsPerDay"],
+                                                "BPMeds": details["BPMeds"],
+                                                "prevalentStroke": details["prevalentStroke"],
+                                                "prevalentHyp": details["prevalentHyp"],
+                                                "diabetes": details["diabetes"],
+                                                "sysBP": details["sysBP"],
+                                                "diaBP": details["diaBP"],
+                                                "BMI": details["BMI"],
+                                                "heartRate": details["heartRate"],
+                                                "glucose": details["glucose"]})
+    <span class="o">return</span> response.json()
+                        </code>  
+                    </pre>  
+                </div>
+            </div>
+
+            <h4>JavaScript</h4>
+
+            <div class="language-shell2 mt-3">
+                <div class="highlight">
+                    <pre class="text-white">
+                        <code>
+    <span class="o">async</span> <span class="o">function</span> postData(url = '', data = {}) {
+    <span class="o">const</span> response = await <span class="o">fetch</span>(url, {
+        <span class="o">method</span>: 'POST', // *GET, POST, PUT, DELETE, etc.
+        <span class="o">mode</span>: 'cors', // no-cors, *cors, same-origin
+        <span class="o">cache</span>: 'no-cache', 
+        <span class="o">credentials</span>: 'same-origin', 
+        <span class="o">headers</span>: {
+        'Content-Type': 'application/json'
+        },
+        <span class="o">redirect</span>: 'follow', 
+        <span class="o">referrerPolicy</span>: 'no-referrer', 
+        <span class="o">body</span>: JSON.stringify(data) 
+    });
+    <span class="o">return</span> response.json(); 
+    }
+    
+    postData('https://ma-api-py.herokuapp.com/predict', data={"sex": 1,
+                                                    "age": 20,
+                                                    "education": 1,
+                                                    "currentSmoker": 0,
+                                                    "cigsPerDay": 0,
+                                                    "BPMeds": 0,
+                                                    "prevalentStroke": 1,
+                                                    "prevalentHyp": 1,
+                                                    "diabetes": 1,
+                                                    "sysBP": 120,
+                                                    "diaBP": 130,
+                                                    "BMI": 30,
+                                                    "heartRate": 72,
+                                                    "glucose": 130})
+    .<span class="o">then</span>(data => {
+        <span class="o">console</span>.log(data); 
+    });
+                        </code>  
+                    </pre>  
+                </div>
+            </div>
+
+            <h4>JQuery AJAX</h4>
+
+            <div class="language-shell2 mt-3">
+                <div class="highlight">
+                    <pre class="text-white">
+                        <code>
+    
+        <span class="o">$</span>("#prediction-form").<span class="o">submit</span>(<span class="o">function</span> (e) {
+        e.<span class="o">preventDefault(</span>);
+
+        let data = <span class="o">JSON</span>.parse(
+            <span class="o">JSON</span>.stringify($("#prediction-form").serializeObject())
+        );
+        
+        <span class="o">$</span>.<span class="o">ajax</span>({
+            <span class="o">url</span>: "https://ma-api-py.herokuapp.com/predict",
+            <span class="o">method</span>: "GET",
+            <span class="o">data</span>: data,
+            <span class="o">async</span>: true,
+            <span class="o">crossDomain</span>: true,
+            <span class="o">headers</span>: {
+                accept: "application/json",
+                "Access-Control-Allow-Origin": "*",
+            },
+            <span class="o">success</span>: function (data) {
+                JSONdata = JSON.parse(data);
+                console.log(JSONdata);
+                $(".chat_box").removeClass("active");
+                $("#prediction-form").trigger("reset");
+                if (JSONdata["prediction"] == 1) {
+                    $(
+                    ".chatbot-output .chatbot-output-container .chatbot-result-bad"
+                    ).css("display", "block");
+                    $(".chatbot-output").css("display", "block");
+                } else {
+                    $(
+                    ".chatbot-output .chatbot-output-container .chatbot-result-good"
+                    ).css("display", "block");
+                    $(".chatbot-output").css("display", "block");
+                }
+            },
+            <span class="o">error</span>: function (e) {
+                console.log(e);
+            },
+        });
+        });
+                            
+                        </code>  
+                    </pre>  
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- ======= Contact Section ======= -->
     <section id="contact">
